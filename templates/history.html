@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sensor History</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+
+        .title {
+            font-weight: bold;
+            color: #2c7a7b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>📊 Sensor Analysis History</h2>
+
+    {% if history %}
+    {% for item in history %}
+    <div class="card">
+        <p class="title">Moisture: {{ item.moisture }}</p>
+        <p class="title">Temperature: {{ item.temperature }}</p>
+        <p>Result: {{ item.result }}</p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No sensor data yet.</p>
+    {% endif %}
+
+</body>
+
+</html>
